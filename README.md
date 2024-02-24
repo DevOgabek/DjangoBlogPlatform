@@ -2,6 +2,14 @@
 
 The Django Blog Platform is a comprehensive web application designed for blogging purposes, built with Django framework. It empowers users with a range of functionalities including user authentication, profile management, and content creation.
 
+## Live Demo
+
+You can access a live demo of the Django Blog Platform by visiting [Demo Link](https://djangoblogplatform.pythonanywhere.com). Please note that this demo is for demonstration purposes only and may not reflect the latest changes or updates to the application.
+
+Feel free to replace `[https://djangoblogplatform.pythonanywhere.com]` with the actual link to your live demo. If you don't have a live demo yet, you can host your Django application on platforms like Heroku or PythonAnywhere and provide the URL accordingly.
+
+Make sure to keep the demo updated with the latest changes to your application for users to explore its functionalities effectively.
+
 ## Key Features
 
 - **User Authentication**: Seamlessly register, login, and logout with secure authentication mechanisms.
