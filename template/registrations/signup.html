@@ -16,10 +16,13 @@ Sign Up
         <span class="subtitle">Create a new account</span>
         {% csrf_token %}
         <div class="form-container">
-            <input type="text" class="input" name="username" placeholder="Username" required />
-            <input type="email" class="input" name="email_input" placeholder="Email" required />
-            <input type="text" class="input" name="first_name" placeholder="First Name" required />
-            <input type="text" class="input" name="last_name" placeholder="Last Name" required />
+            <input type="text" class="input" name="username" placeholder="Username" value="{{ username }}" required />
+            <input type="email" class="input" name="email_input" placeholder="Email" value="{{ email_input }}"
+                required />
+            <input type="text" class="input" name="first_name" placeholder="First Name" value="{{ first_name }}"
+                required />
+            <input type="text" class="input" name="last_name" placeholder="Last Name" value="{{ last_name }}"
+                required />
             <input type="password" class="input" name="password" placeholder="Password" required />
             <input type="password" class="input" name="confirm_password" placeholder="Confirm Password" required />
         </div>

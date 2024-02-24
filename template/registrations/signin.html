@@ -15,7 +15,7 @@ Sign In
         <span class="subtitle">Log in to your account</span>
         {% csrf_token %}
         <div class="form-container">
-            <input type="text" class="input" name="username" placeholder="Username" required />
+            <input type="text" class="input" name="username" placeholder="Username" value="{{ username }}" required />
             <input type="password" class="input" name="password" placeholder="Password" required />
         </div>
         <button type="submit" class="button" id="signInButton">Sign In</button>

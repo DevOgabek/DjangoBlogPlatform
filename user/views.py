@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import CustomUser
-from django.contrib.auth.models import User, auth
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import auth
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from .models import CustomUser
 import re
+
+CustomUser = get_user_model()
 
 
 def check_password_strength(password):
-
     if len(password) < 8:
         return False
 
@@ -24,6 +24,7 @@ def check_password_strength(password):
 
     if not re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
         return False
+
     return True
 
 
@@ -38,20 +39,14 @@ def signup(request):
 
         if password != confirm_password:
             messages.error(request, "Passwords do not match")
-            return redirect("signup")
-
-        if not check_password_strength(password):
+        elif not check_password_strength(password):
             messages.error(request, "Password is not strong enough")
-            return redirect("signup")
-
-        if User.objects.filter(email=email_input).exists():
+        elif CustomUser.objects.filter(email=email_input).exists():
             messages.error(request, "Email Taken")
-            return redirect("signup")
-        elif User.objects.filter(username=username).exists():
+        elif CustomUser.objects.filter(username=username).exists():
             messages.error(request, "Username Taken")
-            return redirect("signup")
         else:
-            user = User.objects.create_user(
+            user = CustomUser.objects.create_user(
                 username=username,
                 email=email_input,
                 password=password,
@@ -65,6 +60,17 @@ def signup(request):
                 messages.error(
                     request, "Failed to create account. Please try again later."
                 )
+
+        return render(
+            request,
+            "registrations/signup.html",
+            {
+                "username": username,
+                "email_input": email_input,
+                "first_name": first_name,
+                "last_name": last_name,
+            },
+        )
     else:
         return render(request, "registrations/signup.html")
 
@@ -87,7 +93,7 @@ def signin(request):
             return redirect("post_list")
         else:
             messages.error(request, "Invalid Credentials")
-            return redirect("signin")
+            return render(request, "registrations/signin.html", {"username": username})
     else:
         return render(request, "registrations/signin.html")
 
