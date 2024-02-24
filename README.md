@@ -10,7 +10,7 @@ The Django Blog Platform is a comprehensive web application designed for bloggin
 - **Post Management**: Perform CRUD operations on posts including creation, reading, updating, and deletion.
 - **Interactive Interface**: User-friendly error and success messages enhance user experience.
 
-> [TIP]
+> [!TIP]
 > Access the administrator profile with custom settings using the credentials: username `ogabekavazov` and password `123`.
 
 ## Requirements
