@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+User Profile
+{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="container">
+    <h1>User Profile</h1>
+    <div>
+        <h2>{{ user_profile.username }}</h2>
+        <p>Bio: {{ user_profile.bio }}</p>
+        {% if user_profile.profile_picture %}
+        <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+        {% else %}
+        <p>No profile picture available</p>
+        {% endif %}
+        {% if user.is_authenticated %}
+        {% if user == user_profile %}
+        <a href="{% url 'settings' %}" class="settings-button">Update Profile</a>
+        <a href="{% url 'logout' %}" class="logout-button">Log out</a>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

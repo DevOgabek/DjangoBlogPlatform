@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Blog - Post List
+{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+
+{% endblock link %}
+
+{% block content %}
+<div class="container">
+    <h1>Blog - Post List</h1>
+    {% for post in posts %}
+    <div class="post">
+        <a href="{% url 'post_detail' pk=post.pk %}">
+            <h2 class="post-title">{{ post.title }}</h2>
+        </a>
+        <p class="post-content">{{ post.content }}</p>
+        <a href="{% url 'profile' pk=post.author.pk %}">
+            <div class="post-author">
+                <img src="{{ post.author.profile_picture.url }}" alt="{{ post.author.username }}" class="author-img">
+                <span>{{ post.author }}</span>
+            </div>
+        </a>
+        <p class="post-date">Published on: {{ post.created_at }}</p>
+        <span class="post-views">Views: {{ post.views }}</span>
+    </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <a href="{% url 'post_create' %}" class="create-post-link">Create New Post</a>
+    {% endif %}
+</div>
+{% endblock content %}

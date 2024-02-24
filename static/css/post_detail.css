@@ -1,0 +1,78 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.post-author {
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.post-date {
+    color: #666;
+}
+
+.author-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: -8px;
+
+}
+
+.post-content {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #0056b3;
+}
+
+.post-actions {
+    margin-top: 30px;
+}
+
+.edit-link,
+.delete-link {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.edit-link:hover,
+.delete-link:hover {
+    color: #0056b3;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-box {
+    max-width: 350px;
+    background: #f2f2f2;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #333;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 24px;
+    gap: 16px;
+    text-align: center;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #000;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+}
+
+.form-container {
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 1rem 0 .5rem;
+    width: 100%;
+}
+
+.input {
+    border: 0;
+    outline: 0;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: .9rem;
+    padding: 8px 15px;
+    color: #333;
+}
+
+.form-section {
+    padding: 16px;
+    font-size: .85rem;
+    background-color: #f5f9ff;
+    color: #333;
+}
+
+.form-section a {
+    font-weight: bold;
+    color: #007bff;
+    transition: color .3s ease;
+}
+
+.form-section a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.form button {
+    background-color: #007bff;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}

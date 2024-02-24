@@ -1,0 +1,71 @@
+.profile-picture {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-content {
+    font-size: 16px;
+    color: #555;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+.author-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.create-post-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.post-views {
+    font-size: 12px;
+    color: #999;
+}

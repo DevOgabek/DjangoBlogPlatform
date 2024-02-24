@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Settings
+{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/settings.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="container">
+    <h1>Settings</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" value="{{ user_profile.first_name }}"><br>
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" value="{{ user_profile.last_name }}"><br>
+        <label for="bio">Bio:</label><br>
+        <textarea id="bio" name="bio" rows="4" cols="50">{{ user_profile.bio }}</textarea><br>
+        <label for="profile_picture">Profile Picture:</label><br>
+        <input type="file" id="profile_picture" name="profile_picture"><br><br>
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+{% endblock content %}
